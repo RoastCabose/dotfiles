@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+final_space: true
+version: 4
+palette:
+  black: "#171514"
+  red: "#f22c40"
+  green: "#7b9726"
+  yellow: "#c38418"
+  blue: "#407ee7"
+  magenta: "#6666ea"
+  cyan: "#3d97b8"
+  white: "#a8a19f"
+  bright-black: "#766e6b"
+  bright-red: "#df5320"
+  bright-green: "#b4da37"
+  bright-yellow: "#68615e"
+  bright-blue: "#9c9491"
+  bright-magenta: "#e6e2e0"
+  bright-cyan: "#c33ff3"
+  bright-white: "#f1efee"
+console_title_template: "{{.Folder}} :: {{.Username}}@{{.HostName}} :: {{ .Shell }}"
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: session
+        style: diamond
+        trailing_diamond: 
+        leading_diamond: "\u256d\u2500"
+        foreground: p:bright-white
+        background: p:magenta
+        template: " {{ if .SSHSession }}  {{ end }}{{ .UserName }}@{{ .HostName}} "
+      - type: path
+        style: powerline
+        powerline_symbol: 
+        foreground: p:bright-white
+        background: p:bright-red
+        template: " {{ .Path }} "
+        options:
+          style: agnoster_short
+          max_depth: 3
+          home_icon: " "
+          folder_icon: " "
+          folder_separator_icon: "  "
+      - type: git
+        style: powerline
+        powerline_symbol: 
+        foreground: p:bright-white
+        background: p:blue
+        template: "{{ .HEAD }}"
+      - type: status
+        style: diamond
+        foreground: p:bright-white
+        background: p:green
+        background_templates:
+          - "{{if .Error }}p:red{{ end }}"
+        trailing_diamond: 
+        leading_diamond: "<transparent,background></>"
+        template: " {{ if eq .Code 0 }} {{ else }} {{ end }}"
+        options:
+          always_enabled: true
+  - type: rprompt
+    segments:
+      - type: time
+        style: plain
+        foreground: p:blue
+        template: "<p:bright-white>[</> {{ .CurrentDate | date .Format }}<p:bright-white>]</>"
+        options:
+          time_format: "Mon _2, 03:04pm"
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: plain
+        foreground: p:magenta
+        template: "\u2570\u2500"
+      - type: root
+        style: plain
+        foreground: p:yellow
+        template: 
+      - type: text
+        style: plain
+        foreground: p:bright-white
+        template: " "
+
+        

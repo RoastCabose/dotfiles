@@ -1,0 +1,7 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ODIN_ROOT:/home/roastcabose/\x2eodin/odin\x2dlinux\x2damd64\x2dnightly\x2b2026\x2d03\x2d03
+SETUVAR --export VINTAGE_STORY:/var/lib/flatpak/app/at\x2evintagestory\x2eVintageStory/current/active/files/extra/vintagestory/
+SETUVAR __fish_initialized:4300
+SETUVAR fish_greeting:
+SETUVAR fish_user_paths:/home/linuxbrew/\x2elinuxbrew/bin\x1e/home/roastcabose/\x2ecargo\x1e/home/roastcabose/\x2elocal/bin\x1e/home/roastcabose/\x2elocal/share/nvim\x1e/home/roastcabose/\x2ecargo/bin
