@@ -85,6 +85,10 @@ ln -s $working_dir/firefox/chrome ~/.mozilla/firefox/$profile/chrome
 sudo dracut --regenerate-all --force
 systemctl --user enable opentabletdriver.service --now
 
+# kitty
+kwriteconfig6 --group General --key TerminalApplication kitty
+kwriteconfig6 --group General --key TerminalService kitty.desktop
+
 # fish
 chsh -s "$(command -v fish)"
 
