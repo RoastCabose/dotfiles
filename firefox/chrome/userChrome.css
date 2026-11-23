@@ -1,0 +1,11 @@
+#sidebar-container {
+  display: none !important;
+}
+
+#sidebar-panel-header {
+  display: none !important;
+}
+
+#sidebar-box {
+  inset-inline-start: 0px !important;
+}

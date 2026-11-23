@@ -1,4 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
-SETUVAR fish_greeting: Welcome back, commander.
+SETUVAR fish_greeting:\x20Welcome\x20back\x2c\x20commander\x2e
+SETUVAR fish_user_paths:/home/roastcabose/\x2ecargo/bin\x1e/home/roastcabose/\x2elocal/bin
