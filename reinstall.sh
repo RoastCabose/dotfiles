@@ -4,9 +4,9 @@ working_dir=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 temp_dir=$(mktemp -d)
 trap 'rm -rf -- "$temp_dir"' EXIT
 
-echo "==================="
+echo "========================"
 echo "Defaults Installer v1"
-echo "==================="
+echo "========================"
 echo "Remember to have started Firefox first, at least once."
 read -rp "Continue? [y/N] " reply
 [[ $reply =~ ^[Yy]$ ]] || { echo "Battlefield offline";  exit 0; }
@@ -23,7 +23,9 @@ echo "..."
 # ============================
 # download packages
 # ============================
-
+echo "========================"
+echo "Downloading requirements"
+echo "========================"
 sudo dnf install -y jq
 
 curl -fL "https://vencord.dev/download/vesktop/amd64/rpm" -o $temp_dir/vesktop-latest.rpm
@@ -33,7 +35,9 @@ curl -fL "https://data.services.jetbrains.com/products/download?code=TBA&platfor
 # ============================
 # install apps
 # ============================
-
+echo "========================"
+echo "Installing applications"
+echo "========================"
 # Fedora packages setup
 sudo dnf config-manager enable rpmfusion-nonfree-steam
 sudo dnf config-manager enable rpmfusion-nonfree-nvidia-driver
@@ -61,7 +65,9 @@ curl -fs https://ohmyposh.dev/install.sh | bash -s
 # ============================
 # configs
 # ============================
-
+echo "========================"
+echo "Configuring install"
+echo "========================"
 # dotfiles
 for dir in fish helix kitty; do
     rm -rf ~/.config/$dir;
@@ -85,17 +91,25 @@ chsh -s "$(command -v fish)"
 # ============================
 # wrap up
 # ============================
+echo "========================"
+echo "Wrapping up"
+echo "========================"
 echo "Finish jetbrains toolbox installation with the following:"
 echo "  /opt/Jetbrains/jetbrains-toolbox-<version>/bin/jetbrains-toolbox"
-echo "---"
+echo "========================"
 echo "Check for misplaced desktop entries in ~/.local/share/applications"
 echo "They can be moved to /usr/share/applications"
-echo "---"
+echo "========================"
 echo "These are the widgets you used for desktop panels:"
 echo "  Places"
 echo "  Advanced Media Player"
 echo "  Compact Pager"
-echo "---"
+echo "========================"
 echo "Enable css customization on Firefox:"
 echo "  Open about:config"
 echo "  Set toolkit.legacyUserProfileCustomizations.stylesheets to true"
+echo "  Import sideberry settings"
+echo "========================"
+echo "That look good to you?"
+sleep 3
+echo "Looks good to me"
